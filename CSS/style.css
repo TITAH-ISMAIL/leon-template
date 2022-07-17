@@ -1,0 +1,416 @@
+/* start global rules*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: sans-serif;
+}
+.container {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+:root {
+    --main-color: #09c29a;
+    --secondary-color: rgb(28, 42, 56);
+    --grey-color:#7a7a7a;
+    --grey-back:#f6f6f6;
+    --margin: 60px;
+}
+/* end global rules*/
+/* start header */
+header .logo {
+    display: flex;
+    align-items: center;
+}
+header .logo span:first-child {
+    width: 4px;
+    height: 30px;
+    background-color: var(--secondary-color);
+}
+header .logo span:last-child {
+    width: 35px;
+    height: 35px;
+    border: 4px solid var(--main-color);
+    border-radius: 50%;
+    margin-left: 5px;
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .icon {
+    width: 35px;
+    height: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+header {
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 999999;
+    box-shadow: black 1px -5px 8px 0px;
+}
+header .icon span{
+    width: 100%;
+    height: 3px;
+    background-color: #222;
+}
+header .icon span:nth-child(2) {
+    width: 50%;
+    transition: 0.3s;
+}
+header .icon:hover span:nth-child(2){
+    width: 100%;
+}
+header .links-t {
+    width: 0;
+}
+header .icon:hover ul{
+    display: block;
+}
+header .links {
+    list-style: none;
+    position: absolute;
+    margin: 10px 0;
+    padding: 0;
+    right: 0px;
+    top: 40px;
+    background-color: var(--grey-back);
+    padding: 10px;
+    width: 150px;
+    display: none;
+    z-index: 999999;    
+}
+header .t {
+    position: relative;
+}
+header .links li {
+    margin: 10px;
+    transition: 0.5s;
+}
+header .links li:hover {
+    padding-left: 10px;
+}
+header .links a {
+    text-decoration: none;
+    color: #222;
+    margin-bottom: 10px;
+    padding-right: 100%;
+}
+header ul::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -30px;
+    right: 0;
+    border: 15px solid;
+    border-color: transparent transparent var(--grey-back) transparent;
+}
+/* end header */
+/* start intro */
+.intro {
+    width: 100%;
+    height: calc(100vh - 55px);
+    background-color: var(--grey-back);
+    background-size: cover;
+    background-image: url(../assets/images/young-adult-business-man-typing-using-laptop-office.jpg);
+    position: relative;
+}
+.intro .info h1 {
+    margin: 0;
+    text-align: center;
+    color: var(--main-color);
+    font-weight: 800;
+}
+.intro .info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    line-height: 1.6;
+    width: 350px;
+}
+@media (max-width:767px) {
+    .intro .info {
+        width: 100%;
+    }
+}
+/* end intro */
+/* start features */
+.features {
+    margin-top: var(--margin);
+    margin-bottom: var(--margin);
+}
+.features .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    justify-content: space-between;
+}
+.features .col {
+    padding: 10px;
+    text-align: center;
+    line-height: 1.8;
+    margin-top: 20px;
+}
+.features .col i {
+    font-size: 35px;
+    color: var(--main-color);
+}
+.features h3 {
+    font-size: 25px;
+    padding: 10px 0;
+}
+.features p {
+    color: #999;
+}
+@media (max-width:767px) {
+    .features .col {
+        padding: 0;
+    }
+    .features .container {
+        grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    }
+}
+/* end features */
+/* ! Start component */
+.special-heading h3 {
+    text-align: center;
+    font-size: 65px;
+    letter-spacing: -2px;
+    font-weight: 800;
+    color: var(--grey-color);
+    opacity: 0.2;
+}
+.special-heading p {
+    text-align: center;
+    margin: -15px 0px;
+    font-weight: bold;
+    font-size: 18px;
+}
+@media (max-width:767px){
+    .special-heading h3 {
+        font-size: 50px;
+    }
+}
+/* ! end component */
+/* start Services*/
+.services .special-heading{
+    margin-bottom: var(--margin);
+}
+.services .image {
+    width: 200px;
+    height: 250px;
+    background-color: var(--grey-color);
+}
+.services .services-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    justify-content: space-between;
+    gap: 10px;
+}
+.services .services-content .image {
+    margin: auto;
+}
+.services-content .serv {
+    display: flex;
+    margin-bottom: 20px;
+}
+.services-content .serv i {
+    color: var(--main-color);
+    font-size: 30px;
+    padding: 0 20px;
+}
+.services-content h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.services-content p {
+    line-height: 1.6;
+    color: #999;
+}
+.services-content .image {
+    position: relative;
+}
+.services-content .image::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: calc(100% + 100px);
+    top: -50px;
+    right: -50px;
+    background-color: var(--secondary-color);
+    z-index: -1;
+}
+@media (max-width: 992px) {
+    .services-content .image {
+        display: none;
+    }
+}
+@media (max-width: 767px) {
+    .services-content .serv {
+        flex-direction: column;
+        text-align: center;
+    }
+    .services-content {
+        grid-template-columns: repeat(auto-fill,minmax(200px,1fr)) !important;
+    }
+}
+/* end services*/
+/* start portfolio */
+.portfolio .special-heading {
+    margin-top: var(--margin);
+    margin-bottom: var(--margin);
+}
+.portfolio .image {
+    width: 100%;
+    background-image: url(../assets/images/close-up-cropped-portrait-successful-smart-man-businessman-student-sitting-table-with-mobile-phone-city-park-using-laptop-working-outdoors-mobile-office-concept-hands-keyboard.jpg);
+    background-size: cover;
+    height: 200px;
+}
+.portfolio .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    justify-content: space-between;
+    gap: 20px;
+    line-height: 1.6;
+}
+.portfolio .content h3 , .portfolio .content p {
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.portfolio .content p {
+    color: #555;
+}
+.portfolio .col {
+    background-color: var(--grey-back);
+}
+body ::selection{
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+}
+@media (max-width: 767px) {
+    .portfolio .col {
+        max-width: 400px;
+        justify-self: center;
+    }
+    .portfolio .content {
+        grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    }
+}
+/* end portfolio */
+/* start About */
+.about .special-heading {
+    margin-top: var(--margin);
+    margin-bottom: var(--margin);
+}
+.about .content {
+    display: flex;
+    gap: 20px;
+}
+.about .content .text {
+    padding: 20px;
+}
+.about .image {
+    width: 100%;
+    background-size: cover;
+    background-image: url(../assets/images/close-up-cropped-portrait-successful-smart-man-businessman-student-sitting-table-with-mobile-phone-city-park-using-laptop-working-outdoors-mobile-office-concept-hands-keyboard.jpg);
+}
+.about .content p:first-child{
+    line-height: 1.8;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.about .content p:last-child{
+    line-height: 1.8;
+    color: #333;
+    margin-top: 10px;
+}
+.about .content hr {
+    border: solid var(--main-color) 2px;
+    width: 50%;
+}
+@media (max-width:992px) {
+    .about .content {
+        flex-direction: column;
+    }
+}
+/* end About */
+/*start contact */
+.contact .special-heading {
+    margin: 60px 0;
+}
+.contact .text {
+    text-align: center;
+}
+.contact .text h3 {
+    font-size: 35px;
+    color: var(--secondary-color);
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+}
+.contact .text .email{
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--main-color);
+}
+.contact .social {
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+    font-size: 18px;
+    margin: 15px auto;
+}
+.contact a:not(.email){
+    text-decoration: none;
+    color: var(--secondary-color);
+    margin-bottom: 60px;
+}
+/* end contact*/
+/* start footer */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color);
+    color: white;
+}
+footer p {
+    padding: 20px;
+}
+/* end footer */
+/* smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
